@@ -1,0 +1,76 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+#calendar-container {
+  width: 720px;
+  height: 720px;
+  position: relative;
+  margin: 50px auto;
+}
+#calendar-time-scale {
+  width: 99px;
+  height: 100%;
+  border-right: 1px solid #999;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+  #calendar-time-scale div {
+    padding-right: 10px;
+    margin: 14px 0;
+    text-align: right;
+  }
+  #calendar-time-scale div:first-child {
+    margin-top: -9px;
+  }
+  .calendar-hr {
+    color: #222;
+    font-weight: bold;
+  }
+  .calendar-am-pm {
+    font-size: 10px;
+    color: #999;
+    font-weight: normal;
+  }
+  .calendar-halfhr {
+    color: #999;
+    font-size: 12px;
+  }
+
+#calendar-events {
+  width: 600px;
+  height: 100%;
+  background: #EEE;
+  float: left;
+  margin: 0;
+  padding: 0 10px;
+  position: relative;
+}
+  .calendar-event {
+    min-height: 15px;
+    min-width: 20px;
+    position: absolute;
+    font-size: 13px;
+  }
+    .calendar-event-border {
+      width: 4px;
+      height: 100%;
+      background: rgba(0,83,159,0.65);
+      position: absolute;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .calendar-event-content {
+      border: 1px solid #CCC;
+      border-left: 0;
+      min-height: 13px;
+      color: #222;
+      margin-left: 4px;
+      background: #FFF;
+      padding: 6px 10px;
+    }
+      .calendar-event-content span {
+        font-size: 10px;
+        color: #777;
+      }

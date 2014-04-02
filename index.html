@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compare Metrics UI Exercise</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/template" id="calendar-hr-tpl">
+    <div class="calendar-hr">
+      <span>{{time}}</span> <span class="calendar-am-pm">{{m}}</span>
+    </div>
+  </script>
+  <script type="text/template" id="calendar-halfhr-tpl">
+    <div class="calendar-halfhr">
+      <span>{{time}}</span>
+    </div>
+  </script>
+  <script type="text/template" id="calendar-event-tpl">
+    <div class="calendar-event" style="width:{{w}}px;left:{{x}}px;top:{{y}}px;">
+      <div class="calendar-event-border"></div>
+      <div class="calendar-event-content" style="height: {{h}}px">
+        <b>Sample Event</b><br />
+        <span>Sample Location</span>
+      </div>
+    </div>
+  </script>
+</head>
+<body>
+  <div id="calendar-container">
+    <div id="calendar-time-scale"></div>
+    <div id="calendar-events"></div>
+  </div>
+</body>
+</html>
