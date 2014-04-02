@@ -1,11 +1,11 @@
-function layoutDay(evts) {
+function layOutDay(evts) {
   var $evt = $('#calendar-event-tpl'),
     $cal = $('#calendar-events').clear(),
-    wid,
     groups = group(evts);
   // cycle through each group of colliding events and render them into the calendar
   groups.forEach(function(grp) {
-    var cols = [];
+    var cols = [],
+      wid;
     grp.evts.forEach(function(evt) {
       // determine the colomn to render into
       var place = 0, matched;
@@ -54,8 +54,8 @@ function group(evts) {
       id: i
     });
   });
-  // match each group to determine overlap
-  groups.forEach(function(grp) {
+  // match each group to determine overlap and filter
+  groups = groups.filter(function(grp) {
     groups.forEach(function(g, idx) {
       if (!g.dead && !grp.dead && grp.id !== g.id && coincide(grp, g)) {
         grp.start = Math.min(grp.start, g.start);
@@ -64,9 +64,6 @@ function group(evts) {
         g.dead = true;
       }
     });
-  });
-  // filter out overlaped groups
-  groups = groups.filter(function(grp) {
     return !grp.dead;
   });
   // determine widest possible width evts in each group
