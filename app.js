@@ -89,9 +89,9 @@ function group(evts) {
 
 // determine if two events or groups coincide
 function coincide(span1, span2) {
-  if (span1.start > span2.start && span1.start < span2.end || 
-    span1.end > span2.start && span1.end < span2.end ||
-    span1.start < span2.start && span1.end > span2.end) return true;
+  if (span1.start >= span2.start && span1.start < span2.end || 
+    span1.end > span2.start && span1.end <= span2.end ||
+    span1.start <= span2.start && span1.end >= span2.end) return true;
   return false;
 }
 
