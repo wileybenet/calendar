@@ -11,9 +11,11 @@ function layOutDay(evts) {
       var place = 0, matched;
       cols.forEach(function(col, idx) {
         col.forEach(function(e) {
-          if (!matched && coincide(evt, e)) place = idx+1;
+          if (!matched && coincide(evt, e))
+            place = idx+1;
         });
-        if (place === idx) matched = true;
+        if (place === idx)
+          matched = true;
       });
       cols[place] = cols[place] || [];
       cols[place].push(evt);
@@ -89,10 +91,9 @@ function group(evts) {
 
 // determine if two events or groups coincide
 function coincide(span1, span2) {
-  if (span1.start >= span2.start && span1.start < span2.end || 
+  return (span1.start >= span2.start && span1.start < span2.end || 
     span1.end > span2.start && span1.end <= span2.end ||
-    span1.start <= span2.start && span1.end >= span2.end) return true;
-  return false;
+    span1.start <= span2.start && span1.end >= span2.end);
 }
 
 // DOM selector and template rendering service
